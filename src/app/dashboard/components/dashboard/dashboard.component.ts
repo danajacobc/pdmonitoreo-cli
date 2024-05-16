@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Plantas } from '../../interfaces/plantas';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+
+  @Input()
+  public plantas: Plantas[] = [];
 
 }
