@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './auth/components/login/login.component';
+import { DashboardComponent } from './dashboard/components/dashboard/dashboard.component';
+import { TableComponent } from './dashboard/components/table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
