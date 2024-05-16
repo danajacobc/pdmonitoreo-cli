@@ -19,6 +19,8 @@ export class TableComponent {
 
     plants! : Plantas[] ;
 
+    openMenu = -1;
+
     constructor(private plantasService: PlantasService ) {
         this.getPlants();
     }
@@ -27,8 +29,6 @@ export class TableComponent {
       this.plants = await lastValueFrom(this.plantasService.getAllPlants());
 
     }
-
-    openMenu = -1;
 
     toggleMenu(index : any) {
       console.log(index);
@@ -43,4 +43,12 @@ export class TableComponent {
         this.openMenu = index;
       }
     }
+
+    async plantDelete(index : any) {
+      const result = await lastValueFrom(this.plantasService.deletePlant(this.plants[index].id));
+      if(result) {
+        this.getPlants();
+      }
+    }
+
 }

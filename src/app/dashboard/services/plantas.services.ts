@@ -14,4 +14,9 @@ export class PlantasService {
     const URL =this.serverUrl + 'plantas'
     return this.http.request<Plantas[]>('get',URL)
   }
+
+  deletePlant(id : string) {
+    const URL = this.serverUrl + `plantas/${id}`
+    return this.http.request<Boolean>('delete', URL)
+  }
 }

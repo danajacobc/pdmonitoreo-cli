@@ -1,6 +1,7 @@
 import { Countries } from "./pais";
 
 export interface Plantas {
+  id:           string;
   name:         string;
   lectures:     number;
   red_alert:    number;
