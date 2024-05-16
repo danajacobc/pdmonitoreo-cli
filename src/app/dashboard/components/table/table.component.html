@@ -1,53 +1,69 @@
-<div class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5 w-[1237px] h-[368px]">
-  <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
+<div
+  class="overflow-hidden rounded-lg border border-gray-200 shadow-md m-5 w-[1237px] h-[368px]"
+>
+  <table
+    class="w-full border-collapse bg-white text-left text-sm text-gray-500"
+  >
     <thead class="bg-gray-50">
       <tr>
         <th scope="col" class="px-6 py-4 font-medium text-[#B0CAD1]">País</th>
-        <th scope="col" class="px-6 py-4 font-medium text-[#B0CAD1]">Nombre de la planta</th>
-        <th scope="col" class="px-6 py-4 font-medium text-[#B0CAD1]">Lecturas</th>
-        <th scope="col" class="px-6 py-4 font-medium text-[#B0CAD1]">Alertas Medias</th>
-        <th scope="col" class="px-6 py-4 font-medium text-[#B0CAD1]">Alertas Rojas</th>
-        <th scope="col" class="px-6 py-4 font-medium text-[#B0CAD1]">Acciones</th>
+        <th scope="col" class="px-6 py-4 font-medium text-[#B0CAD1]">
+          Nombre de la planta
+        </th>
+        <th scope="col" class="px-6 py-4 font-medium text-[#B0CAD1]">
+          Lecturas
+        </th>
+        <th scope="col" class="px-6 py-4 font-medium text-[#B0CAD1]">
+          Alertas Medias
+        </th>
+        <th scope="col" class="px-6 py-4 font-medium text-[#B0CAD1]">
+          Alertas Rojas
+        </th>
+        <th scope="col" class="px-6 py-4 font-medium text-[#B0CAD1]">
+          Acciones
+        </th>
       </tr>
     </thead>
     <!-- Body -->
     <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-      <tr *ngFor="let p of plants; let i = index" class="hover:bg-gray-50 w-[1260px] h-[76px]">
-        <th class="flex justify-start items-center gap-3 px-6 py-4 font-normal text-gray-900">
-          <div class="relative ">
-            <img
-              class="h-[18px] w-[24px] object-cover object-center"
-              [src]="p.pais.img"
-              alt="bandera"
-            />
+      <tr
+        *ngFor="let p of plants; let i = index"
+        class="hover:bg-gray-50 w-[1260px] h-[76px]"
+      >
+        <td class="px-6 py-2">
+          <div class="flex items-end gap-3">
+            <img class="h-[18px] w-[24px]" [src]="p.pais.img" alt="bandera" />
+
+            <p class="font-medium text-gray-700 mt-3">{{ p.name }}</p>
           </div>
-          <div class="text-sm">
-            <p class="font-medium text-gray-700 mt-3">{{p.pais.name}}</p>
-          </div>
-        </th>
-        <td class="px-6 py-4">
-          <p class="font-medium text-gray-700 mt-3">{{p.name}}</p>
         </td>
-        <td class="px-6 py-4">
-          <p class="font-medium text-gray-700 mt-3">{{p.lectures}}</p>
+        <td class="px-6 py-2">
+          <p class="font-medium text-gray-700 mt-3">{{ p.name }}</p>
         </td>
-        <td class="px-6 py-4">
-          <p class="font-medium text-gray-700 mt-3">{{p.medium_alert}}</p>
+        <td class="px-6 py-2">
+          <p class="font-medium text-gray-700 mt-3">{{ p.lectures }}</p>
         </td>
-        <td class="px-6 py-4">
-          <p class="font-medium text-gray-700 mt-3">{{p.red_alert}}</p>
+        <td class="px-6 py-2">
+          <p class="font-medium text-gray-700 mt-3">{{ p.medium_alert }}</p>
         </td>
-        <td class="px-6 py-4" (click)="toggleMenu(i)">
+        <td class="px-6 py-2">
+          <p class="font-medium text-gray-700 mt-3">{{ p.red_alert }}</p>
+        </td>
+        <td class="px-6 py-2" (click)="toggleMenu(i)">
           <div class="flex justify-start ml-8 relative">
-            <img
-              src="../../../../assets/icons/Vector.png"
-              alt="vector"
-            />
-            <div *ngIf="openMenu===i" class="absolute top-4 right-[86px] flex flex-col items-center justify-center w-[149px] h-[66px] rounded-md border border-[#DBDBDB] ">
-              <div class="w-[149px] h-[29px] pl-4 flex items-center hover:bg-[#FAF6FF] cursor-pointer">
+            <img src="../../../../assets/icons/Vector.png" alt="vector" />
+            <div
+              *ngIf="openMenu === i"
+              class="absolute top-4 right-[86px] flex flex-col items-center justify-center w-[149px] h-[66px] rounded-md border border-[#DBDBDB]"
+            >
+              <div
+                class="w-[149px] h-[29px] pl-4 flex items-center hover:bg-[#FAF6FF] cursor-pointer"
+              >
                 <span>Editar</span>
               </div>
-              <div class="w-[149px] h-[29px] pl-4 flex items-center hover:bg-[#FAF6FF] cursor-pointer">
+              <div
+                class="w-[149px] h-[29px] pl-4 flex items-center hover:bg-[#FAF6FF] cursor-pointer"
+              >
                 <span>Eliminar</span>
               </div>
             </div>
