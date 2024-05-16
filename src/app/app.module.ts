@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './auth/components/login/login.component';
 import { DashboardComponent } from './dashboard/components/dashboard/dashboard.component';
 import { TableComponent } from './dashboard/components/table/table.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TableComponent } from './dashboard/components/table/table.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
 
     SharedModule,
   ],

@@ -1,15 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'auth-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
 
-  private loginForm!: FormGroup;
+  loginForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private router: Router) {
       this.buildForm();
@@ -22,5 +23,8 @@ export class LoginComponent {
       })
   }
 
+  redirect() {
+    this.router.navigate(['/dashboard']);
+  }
 
 }
