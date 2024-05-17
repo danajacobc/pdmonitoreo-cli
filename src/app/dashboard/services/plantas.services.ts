@@ -6,7 +6,7 @@ import { Plantas } from '../interfaces/plantas';
 @Injectable({providedIn: 'root'})
 export class PlantasService {
 
-  private serverUrl: string = 'http://localhost:8080/pdm/'
+  private serverUrl: string = 'https://pdmonitoreo-server.onrender.com/pdm/'
 
   constructor(private http: HttpClient) { }
 

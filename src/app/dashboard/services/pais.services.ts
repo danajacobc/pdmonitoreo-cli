@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({providedIn: 'root'})
 export class CountriesService {
 
-  private serverUrl: string = 'localhost:8080/pdm/pais/{{id}}'
+  private serverUrl: string = 'https://pdmonitoreo-server.onrender.com/pdm/'
 
   constructor(private http: HttpClient) { }
 
