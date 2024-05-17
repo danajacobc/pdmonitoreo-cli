@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserDTO } from '../../../dashboard/interfaces/userDTO';
+import { lastValueFrom } from 'rxjs';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'auth-login',
@@ -12,7 +15,7 @@ export class LoginComponent {
 
   loginForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) {
       this.buildForm();
   }
 
@@ -25,6 +28,17 @@ export class LoginComponent {
 
   redirect() {
     this.router.navigate(['/dashboard']);
+  }
+
+  async loginOrCreate() {
+    const userDto: UserDTO = {
+        email: this.loginForm.get("email")?.value,
+        password: this.loginForm.get("password")?.value,
+    }
+    const result = await lastValueFrom(this.authService.loginOrCreate(userDto));
+    if(result){
+      this.redirect();
+    }
   }
 
 }
