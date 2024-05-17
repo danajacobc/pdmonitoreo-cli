@@ -1,0 +1,20 @@
+<div class="w-screen h-screen bg-[#0F0F0F40] flex justify-center items-center">
+  <div class="bg-white w-[494px] h-[302px] rounded-3xl flex flex-col justify-between py-3">
+    <div class="w-full h-[62px] flex items-center justify-between border-b-2 px-5">
+      <span>crear nueva planta</span>
+      <img (click)="emitCloseModal()" src="../../../../assets/icons/close.png">
+    </div>
+    <div [formGroup]="createForm" class="w-full flex flex-col items-center justify-between px-5 text-[#84818A]">
+      <input formControlName="name" class="w-[428px] h-[38px] rounded-md border border-[#DCDBDD] pl-4 pt-[13px] pb-2 mt-[47px]" placeholder="Nombre planta">
+      <select formControlName="country" class="w-[428px] h-[38px] rounded-md border border-[#DCDBDD] pl-4 pt-[5px] pb-2 mt-[20px]" >
+        <option>Paìs</option>
+        <option *ngFor="let country of countries">{{country['name']}}</option>
+      </select>
+    </div>
+    <div class="w-full flex items-center justify-end gap-2 px-5 text-[#84818A] mb-5">
+      <button (click)="emitCloseModal()" class="block w-[118px] h-[38px] bg-[#EEEBEB] mt-5 rounded-2xl text-[#8F9CA1]">Cancelar</button>
+      <button (click)="createPlant()" class="block w-[118px] h-[38px] bg-[#33A3AA] mt-5 rounded-2xl text-white">Crear</button>
+    </div>
+  </div>
+
+</div>

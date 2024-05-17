@@ -9,3 +9,13 @@ export interface Plantas {
   enabled:      boolean;
   pais:         Countries;
 }
+
+export interface PlantDTO {
+  name:         string;
+  lectures:     number;
+  red_alert:    number;
+  medium_alert: number;
+  enabled:      boolean;
+  pais:         string;
+}
+

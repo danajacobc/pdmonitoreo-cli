@@ -1,10 +1,17 @@
-
-<p class="font-bold flex justify-center h-full mt-5">Monitoreo global</p>
-<div class="w-[1277px] h-[511px] top-[239px] left-[127px]">
-  <div class="flex flex-row gap-10  mt-[31px] ml-[31px]">
-    <p class="text-[#22242C] font-semibold ">Plantas</p>
-    <button class="w-[216px] h-[42px] rounded-lg border border-[#D9D9D9] ">+ Crear nueva planta</button>
+<div class="flex flex-row w-full h-full">
+  <!-- Modal -->
+  <dash-modal (closeModal)="openCreateModal(false)" *ngIf="openModal" class="absolute"></dash-modal>
+  <!-- <div class="w-[82px] bg-red-200">
+    <span>sidebar</span>
+  </div> -->
+  <div class="h-full">
+    <p class="font-bold text-2xl flex justify-start h-full mt-5 ml-[31px]">Monitoreo global</p>
+    <div class="w-[1277px] h-[511px] top-[239px] left-[127px]">
+      <div class="flex flex-row gap-10 items-center mt-[31px] ml-[31px]">
+        <p class="text-[#22242C] font-semibold ">Plantas</p>
+        <button (click)="openCreateModal(true)" class="w-[216px] h-[42px] rounded-lg border border-[#D9D9D9] ">+ Crear nueva planta</button>
+      </div>
+      <dash-table></dash-table>
+    </div>
   </div>
-  <dash-table></dash-table>
 </div>
-

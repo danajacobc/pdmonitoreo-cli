@@ -9,13 +9,15 @@ import { DashboardComponent } from './dashboard/components/dashboard/dashboard.c
 import { TableComponent } from './dashboard/components/table/table.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalComponent } from './dashboard/components/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    TableComponent
+    TableComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
