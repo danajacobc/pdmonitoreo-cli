@@ -37,6 +37,7 @@ export class LoginComponent {
     }
     const result = await lastValueFrom(this.authService.loginOrCreate(userDto));
     if(result){
+      localStorage.setItem('fakeToken', '3st3_3s_un_t0k3n_f4ls0')
       this.redirect();
     }
   }
